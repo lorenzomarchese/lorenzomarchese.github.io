@@ -55,6 +55,10 @@ $(document).ready(function(){
     $('.cell').fadeIn('slow');
     $('#newgame').click();
   });
+
+  $('#examplegif').click(function(){
+    $('#gif').slideToggle(500);
+  });
 });
 
 function getY(s){
