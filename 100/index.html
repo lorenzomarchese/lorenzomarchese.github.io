@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>100</title>
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/>
+    <link rel="apple-touch-icon" href="imgs/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="imgs/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="imgs/apple-touch-icon-114x114.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <a href="#new"><div class="button" id="newgame">NEW<br> GAME</div></a>
+      <a href="#rules"><div class="button" id="howto">HOW TO<br> PLAY</div></a>
+      <div class="button" id="slogan">FILL ALL THE 100 SQUARES!</div>
+      <a href=""><span class="button" id="logo">10<sup>2</sup></span></a>
+    <div class="grid wave" id="new"></div>
+    <div id="endgame">
+      <p class="endtext"></p>
+      <p id="endnewgame">NEW GAME</p>
+    </div>
+    <div id="rules" style="margin: 20px 0px 20px 0px; width: 100%; height: 1px; background-color: #fff;"></div>
+    
+    <div class="rules">
+    HOW TO PLAY:<br> Fill all the the squares from 1 to 100 by following two simple rules:
+    <ol>
+      <li>You can start in any cell you want</li>
+      <li>Next numbers can be put anywhere too by skipping 2 squares vertically and horizontally
+        or by skipping 1 square diagonally</li>
+    </ol>
+    <p>Click <strong id="examplegif">here</strong> to see an example</p>
+    <div id="gif">
+      <img src="imgs/howto1.gif">
+    </div>
+    <div style="margin: 20px 0px 20px 0px; width: 100%; height: 1px; background-color: #fff;"></div>
+    <p><strong>NOTICE</strong>: only the game at <a href="http://lorenzomarchese.github.io"><strong>this page</strong></a> is the original version of 10<sup>2</sup>&copy. Copies on other sites are not original nor were authorized.</p>
+    <div style="margin: 20px 0px 20px 0px; width: 100%; height: 1px; background-color: #fff;"></div>
+    <div class="share">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out 100, an amazing game! #100thegame" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id="paypal">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="lorenzo.marchese4@gmail.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="100">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="EUR">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+<input type="image" src="imgs/donate.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+    </div>
+    </div>
+  </body>
+</html>
