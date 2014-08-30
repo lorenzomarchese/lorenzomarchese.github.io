@@ -98,7 +98,7 @@ function endGame(){
       $('.endtext').empty().append('YOU<br>WON!!');
       $('#endgame').fadeIn('slow');
   }
-  if($('.cell').hasClass('.green') == false){
+  if($('.cell').hasClass('green') == false){
     $('.cell').fadeOut('slow');
     $('.endtext').empty().append('GAME<br>OVER!!');
     $('#endgame').fadeIn('slow');
