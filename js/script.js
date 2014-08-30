@@ -81,15 +81,15 @@ function getX(s){
   }
 }
 function allowed(x,y){
-  $('.cell').css({"background-color":"rgba(255,255,255,0.7)"});
-  $('#div'+(y+3)+""+x).css({"background-color":"rgb(118,233,153)"});
-  $('#div'+(y-3)+""+x).css({"background-color":"rgb(118,233,153)"});
-  $('#div'+y+""+(x+3)).css({"background-color":"rgb(118,233,153)"});
-  $('#div'+y+""+(x-3)).css({"background-color":"rgb(118,233,153)"});
-  $('#div'+(y+2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"});
-  $('#div'+(y+2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"});
-  $('#div'+(y-2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"});
-  $('#div'+(y-2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"});
+  $('.cell').css({"background-color":"rgba(255,255,255,0.7)"}).removeClass('green');
+  $('#div'+(y+3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y-3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+y+""+(x+3)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+y+""+(x-3)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y+2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y+2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y-2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y-2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
 }
 
 function endGame(){
@@ -98,7 +98,7 @@ function endGame(){
       $('.endtext').empty().append('YOU<br>WON!!');
       $('#endgame').fadeIn('slow');
   }
-  if($('.cell').css('background-color') == "rgba(255, 255, 255, 0.7)" && counter < 100){
+  if($('.cell').hasClass('.green') == false){
     $('.cell').fadeOut('slow');
     $('.endtext').empty().append('GAME<br>OVER!!');
     $('#endgame').fadeIn('slow');
