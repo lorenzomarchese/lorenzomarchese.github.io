@@ -247,8 +247,23 @@ li{
   color: #0072ff;
   text-align: center;
 }
-  
+
+.endscore{
+  font-size: 15px;
+  font-family: Futura;
+  color: #0072ff;
+  text-align: center;
+  margin-top: -15px;
 }
+/* Media end */}
 #paypal{
 display: inline-block;
+}
+
+.endscore{
+  font-size: 40px;
+  font-family: Futura;
+  color: #0072ff;
+  text-align: center;
+  margin-top: -40px;
 }

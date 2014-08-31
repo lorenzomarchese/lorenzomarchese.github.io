@@ -101,6 +101,7 @@ function endGame(){
   if($('.cell').hasClass('green') == false){
     $('.cell').fadeOut('slow');
     $('.endtext').empty().append('GAME<br>OVER!!');
+    $('.endscore').empty().append('SCORE: '+counter);
     $('#endgame').fadeIn('slow');
   }
 
