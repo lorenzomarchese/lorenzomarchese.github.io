@@ -69,13 +69,13 @@ body{
 
 .social{
 	height: 45px;
-	width: 200px;
-	background: red;
 	margin: 0 auto;
 	margin-top: 40px;
 	display: none;
 }
-
+img{
+	margin-left: 25px;
+}
 </style>
 </head>
 
@@ -84,12 +84,31 @@ body{
 <script SRC="x-js/transit.js"></script>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div class="container">
 	<div id="tr-1"></div>
 		<div id="tr-3"></div>
 	<p align="center" class="message">WISH YOU A FOOLISH CHRISTMAS</p>
 		<a href="#share"><p class="button">SHARE</p></a>
-		<div class="social"></div>
+		<div class="social">
+			<a href="https://www.facebook.com/sharer/sharer.php?u=http://lorenzomarchese.github.io/merry-x-mas" target="_blank">
+				<img src="icon_fb.png" width="30" height="30" alt="Share on Facebook" style="margin-left:0px">
+			</a>
+			<a class="twitter popup" href="http://twitter.com/share?text=WISH%20YOU%20A%20FOOLISH%20CHRISTMAS!%20via%20@lorenzomrch%20http://lorenzomarchese.github.io/merry-x-mas">
+			<img src="icon_tw.png" width="30" height="30" alt="Share on Twitter">
+			</a>
+			<a href="https://plus.google.com/share?url={http://lorenzomarchese.github.io/merry-x-mas}" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
+  src="icon_go.png" width="30" height="30" alt="Share on Google+"/></a>
+  <a href="mailto: ?&amp;subject=MERRY X-MAS&amp;body=WISH YOU A FOOLISH CHRISTMAS! http://lorenzomarchese.github.io/merry-x-mas"><img src="icon_ma.png" width="30" heght="30"></a>
+		</div>
 </div>
 
 <script type="text/javascript">
