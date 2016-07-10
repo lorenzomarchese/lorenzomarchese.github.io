@@ -93,7 +93,7 @@ li{
 
 #endnewgame:hover{
   color: #EBE8EC;
-  border: 1px solid #EBE8EC;
+  border: 2px solid #EBE8EC;
 }
 
 #howto{
@@ -127,14 +127,14 @@ li{
 .rules{
   width: 100%;
   font-family: Futura, sans-serif;
-  color: #FFF;
+  color: #EBE8EC;
   letter-spacing: 1px;
 }
 
 #endgame{
   width: 570px;
   height: 570px;
-  border: 1px solid #0072ff;
+  border: 2px solid #0072ff;
   position: absolute;
   margin-top: -570px;
   display: none;
@@ -152,7 +152,7 @@ li{
   font-family: Futura, sans-serif;
   font-size: 14pt;
   display: inline-block;
-  border: 1px solid #0072ff;
+  border: 2px solid #0072ff;
   text-align: center;
   padding: 10px 20px 10px 20px;
   color: #0072FF;
@@ -167,7 +167,7 @@ li{
 #slogan{
   clear: right;
   border: transparent;
-  color: #FFF;
+  color: #EBE8EC;
   padding: 20px 0px 10px 0px;
   letter-spacing: 2px;
 }
