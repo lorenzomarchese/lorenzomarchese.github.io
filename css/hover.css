@@ -1731,7 +1731,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  /* original background: #2098d1; */
+  background: #0072FF;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 0;
@@ -1811,7 +1812,8 @@
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
-  background: #e1e1e1;
+  /*background: #e1e1e1;*/
+  background: rgb(118,233,153);
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -1825,7 +1827,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2098d1;
+  background: rgb(118,233,153);
   border-radius: 100%;
   -webkit-transform: scale(0);
   transform: scale(0);
