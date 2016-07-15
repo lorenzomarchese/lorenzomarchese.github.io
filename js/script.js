@@ -81,15 +81,25 @@ function getX(s){
   }
 }
 function allowed(x,y){
-  $('.cell').css({"background-color":"rgba(255,255,255,0.7)"}).removeClass('green');
-  $('#div'+(y+3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green');
-  $('#div'+(y-3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green');
-  $('#div'+y+""+(x+3)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
-  $('#div'+y+""+(x-3)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
-  $('#div'+(y+2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
-  $('#div'+(y+2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
-  $('#div'+(y-2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
-  $('#div'+(y-2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('.cell').css({"background-color":"rgba(255,255,255,0.7)"}).removeClass('green green-anim');
+  $('#div'+(y+3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+  $('#div'+(y-3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+  $('#div'+y+""+(x+3)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+  $('#div'+y+""+(x-3)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+  $('#div'+(y+2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+  $('#div'+(y+2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+  $('#div'+(y-2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+  $('#div'+(y-2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+
+  // $('.cell').css({"background-color":"rgba(255,255,255,0.7)"}).removeClass('green green-anim');
+  // $('#div'+(y+3)+""+x).addClass('green');
+  // $('#div'+(y-3)+""+x).addClass('green');
+  // $('#div'+y+""+(x+3)).addClass('green');
+  // $('#div'+y+""+(x-3)).addClass('green');
+  // $('#div'+(y+2)+""+(x+2)).addClass('green');
+  // $('#div'+(y+2)+""+(x-2)).addClass('green');
+  // $('#div'+(y-2)+""+(x+2)).addClass('green');
+  // $('#div'+(y-2)+""+(x-2)).addClass('green');
 }
 
 function endGame(){
