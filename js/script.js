@@ -13,7 +13,7 @@ $(document).ready(function(){
   $('#newgame').click(function(){
     $('.grid').removeClass('wave');
     $('.cell').css({"background-color":"rgba(255,255,255,0.7)"}).css({"margin-top":"2px"}).empty();
-    $('.cell').removeClass('clicked');
+    $('.cell').removeClass('clicked green');
     $(".cell").each(function(n, div) {
     div.id = "div" + (n); //n starts at 1
     if(n<10){
@@ -81,15 +81,15 @@ function getX(s){
   }
 }
 function allowed(x,y){
-  $('.cell').css({"background-color":"rgba(255,255,255,0.7)"}).removeClass('green green-anim');
-  $('#div'+(y+3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
-  $('#div'+(y-3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
-  $('#div'+y+""+(x+3)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
-  $('#div'+y+""+(x-3)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
-  $('#div'+(y+2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
-  $('#div'+(y+2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
-  $('#div'+(y-2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
-  $('#div'+(y-2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green green-anim');
+  $('.cell').css({"background-color":"rgba(255,255,255,0.7)"}).removeClass('green');
+  $('#div'+(y+3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y-3)+""+x).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+y+""+(x+3)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+y+""+(x-3)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y+2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y+2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y-2)+""+(x+2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
+  $('#div'+(y-2)+""+(x-2)).css({"background-color":"rgb(118,233,153)"}).addClass('green');
 
   // $('.cell').css({"background-color":"rgba(255,255,255,0.7)"}).removeClass('green green-anim');
   // $('#div'+(y+3)+""+x).addClass('green');
