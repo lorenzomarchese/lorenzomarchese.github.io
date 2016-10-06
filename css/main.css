@@ -40,7 +40,7 @@ body{
   display: inline-block;
   margin: 2px 0px 0px 2px;
   border-radius: 2px;
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   font-size: 28px;
   text-align: center;
   vertical-align: middle;
@@ -59,7 +59,7 @@ body{
 
 
 .text{
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   letter-spacing: 3px;
   margin-top: 15px;
   cursor: pointer;
@@ -74,7 +74,7 @@ body{
 
 
 #share{
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   font-size: 30px;
   color: #FFF;
   text-align: center;
@@ -93,7 +93,7 @@ li{
 }
 
 .button{
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   font-size: 14pt;
   display: inline-block;
   border: 2px solid #0072ff;
@@ -144,7 +144,7 @@ li{
 
 .rules{
   width: 100%;
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   color: #EBE8EC;
   letter-spacing: 1px;
 }
@@ -162,13 +162,13 @@ li{
 
 .endtext{
   font-size: 85px;
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   color: #0072ff;
   text-align: center;
 }
 
 #endnewgame{
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   font-size: 14pt;
   display: inline-block;
   border: 2px solid #0072ff;
@@ -196,7 +196,7 @@ li{
   cursor: pointer;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (max-width : 680px) {
 
 .container{
   width: 410px;
@@ -217,7 +217,7 @@ li{
   display: inline-block;
   margin: 2px 0px 0px 2px;
   border-radius: 2px;
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   font-size: 22px;
   text-align: center;
   vertical-align: middle;
@@ -262,14 +262,14 @@ li{
 
 .endtext{
   font-size: 60px;
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   color: #0072ff;
   text-align: center;
 }
 
 .endscore{
   font-size: 15px;
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   color: #0072ff;
   text-align: center;
   margin-top: -10px;
@@ -281,7 +281,7 @@ display: inline-block;
 
 .endscore{
   font-size: 40px;
-  font-family: Futura, sans-serif;
+  font-family: Futura, Lato, sans-serif;
   color: #0072ff;
   text-align: center;
   margin-top: -40px;

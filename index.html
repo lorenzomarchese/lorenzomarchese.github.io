@@ -10,13 +10,14 @@
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Play this fantastic puzzle game and fill all the 100 squares to win!">
 
     <meta property="og:title" content="100 The Game"/>
     <meta property="og:site_name" content="100 the game"/>
     <meta property="og:description" content="Play this fantastic puzzle game and fill all the 100 squares to win!"/>
 
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/hover.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -25,10 +26,12 @@
   </head>
   <body>
     <div class="container">
+    <div class="header">
       <a href="#new"><div class="button hvr-bounce-to-bottom" id="newgame">NEW<br> GAME</div></a>
       <a href="#rules"><div class="button hvr-bounce-to-bottom" id="howto">HOW TO<br> PLAY</div></a>
       <div class="button" id="slogan">FILL ALL THE 100 SQUARES!</div>
       <a href=""><span class="button" id="logo">10<sup>2</sup></span></a>
+    </div>
     <div class="grid wave" id="new"></div>
     <div id="endgame">
       <p class="endtext"></p>
