@@ -33,7 +33,8 @@ $(document).ready(function(){
     if(cellClass.search("clicked") == -1){
       var x = getX(cellId);
       var y = getY(cellId);
-      if ($('#'+cellId).css('background-color') == "rgb(118, 233, 153)" || counter == 0) {
+      //if ($('#'+cellId).css('background-color') == "rgb(118, 233, 153)" || counter == 0) {
+      if ($('#'+cellId).hasClass("green") || counter == 0) {
         allowed(x,y);
         counter++;
         $('#'+cellId).html(''+counter).removeAttr('id').addClass('clicked');
@@ -100,7 +101,7 @@ function allowed(x,y){
   // $('#div'+(y+2)+""+(x-2)).addClass('green');
   // $('#div'+(y-2)+""+(x+2)).addClass('green');
   // $('#div'+(y-2)+""+(x-2)).addClass('green');
-  
+
 }
 
 function endGame(){
