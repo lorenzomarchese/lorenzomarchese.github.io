@@ -38,8 +38,6 @@ $(document).ready(function(){
         allowed(x,y);
         counter++;
         $('#'+cellId).html(''+counter).removeAttr('id').addClass('clicked');
-      }else if ($('#'+cellId).css('background-color') == "rgba(255, 255, 255, 0.7)"){
-        
       }else{
 
       }
