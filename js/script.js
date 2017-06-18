@@ -100,6 +100,7 @@ function allowed(x,y){
   // $('#div'+(y+2)+""+(x-2)).addClass('green');
   // $('#div'+(y-2)+""+(x+2)).addClass('green');
   // $('#div'+(y-2)+""+(x-2)).addClass('green');
+  
 }
 
 function endGame(){
