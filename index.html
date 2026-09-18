@@ -18,17 +18,21 @@
     <meta property="og:description" content="Play this fantastic puzzle game and fill all the 100 squares to win!"/>
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/main.css?v=12">
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=18">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/script.js?v=6"></script>
   </head>
   <body>
     <div class="container">
     <div class="header">
-      <a href="#new"><div class="button" id="newgame">NEW<br> GAME</div></a>
-      <a href="#rules"><div class="button" id="howto">HOW TO<br> PLAY</div></a>
-      <div class="button" id="slogan">FILL ALL THE 100 SQUARES!</div>
-      <a href=""><span class="button" id="logo">10<sup>2</sup></span></a>
+      <a href=""><span class="button" id="logo"><span class="logo-text">10<sup>2</sup></span></span></a>
+      <div class="header-side">
+        <div class="header-buttons">
+          <a href="#new"><div class="button" id="newgame">NEW<br> GAME</div></a>
+          <a href="#rules"><div class="button" id="howto">HOW TO<br> PLAY</div></a>
+        </div>
+        <div class="button" id="slogan">FILL ALL THE 100 SQUARES!</div>
+      </div>
     </div>
     <div class="board">
       <div class="grid" id="new"></div>

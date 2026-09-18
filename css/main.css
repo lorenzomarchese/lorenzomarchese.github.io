@@ -33,13 +33,15 @@ body{
 .container{
   width: min(570px, calc(100% - 24px));
   margin: 0 auto;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 
 /* Board wrapper: anchors the endgame overlay to the grid at any size */
 .board{
   position: relative;
   clear: both;
-  margin-top: 110px;
+  margin-top: 24px;
   width: 100%;
   aspect-ratio: 1 / 1;
 }
@@ -149,10 +151,29 @@ li{
   text-align: center;
   padding: 10px 20px 10px 20px;
   color: #0072FF;
-  float: right;
   border-radius: 15px;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.header-side{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-buttons{
+  display: flex;
+  gap: 20px;
 }
 
 /* Gradient fill for the action buttons (whole-background fade) */
@@ -189,28 +210,41 @@ li{
 }
 
 #howto{
-  margin-right: 20px;
-  margin-top: 23px;
   letter-spacing: 2px;
 }
 
 #newgame{
-  margin-top: 23px;
   letter-spacing: 2px;
 }
 
 #logo{
-  font-size: 60px;
-  margin-right: 30px;
-  margin-top: -75px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 10px;
-  float: left;
+  font-size: clamp(36px, 55cqh, 72px);
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
   transition: color .45s ease;
   background: linear-gradient(45deg, #ffffff26, #ffffff33);
   backdrop-filter: blur(1px);
   box-shadow: #888 2px 2px 12px;
+  container-type: size;
+}
+
+.logo-text{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#logo sup{
+  font-size: 0.55em;
+  vertical-align: super;
+  line-height: 0;
 }
 
 .share{
@@ -296,11 +330,12 @@ li{
 }
 
 #slogan{
-  clear: right;
   border: transparent;
   color: #EBE8EC;
-  padding: 20px 0px 10px 0px;
+  padding: 8px 0px 0px 0px;
   letter-spacing: 2px;
+  font-size: 12pt;
+  text-align: right;
 }
 
 #examplegif{
@@ -328,8 +363,6 @@ li{
   }
 
   #newgame, #howto{
-    margin-top: 0;
-    margin-right: 0;
     letter-spacing: 0px;
   }
 
@@ -337,15 +370,10 @@ li{
     margin-right: 5px;
   }
 
-  #logo{
-    font-size: 44px;
-    margin: 0;
-    padding: 12px 16px;
-  }
-
   #slogan{
     padding: 8px 0px 4px 0px;
     letter-spacing: 0px;
+    font-size: 10pt;
   }
 
   .board{
