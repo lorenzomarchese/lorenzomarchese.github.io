@@ -2,7 +2,11 @@
   50% {opacity: 0.7;}
 }
 
-.green{
+body{
+  background: linear-gradient(120deg, rgba(180,180,180, 0.5) 0%, rgba(200, 200, 200, 0.9) 23%, rgba(0, 114, 255, 0.33) 44%, rgba(180,180,180, 0.8) 100%);
+}
+
+.cell.green{
   -webkit-animation-name: green-pulse;
   animation-name: green-pulse;
   -webkit-animation-duration: 1s;
@@ -22,31 +26,74 @@ a{
 body{
   margin: 0px 0px 0px 0px;
   background-color: rgb(184,184,184);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
-      
-.grid{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 110px;
-  background-color: transparent;
-  height: 570px;
-  width: 570px;
+
+.container{
+  width: min(570px, calc(100% - 24px));
+  margin: 0 auto;
+}
+
+/* Board wrapper: anchors the endgame overlay to the grid at any size */
+.board{
+  position: relative;
   clear: both;
+  margin-top: 110px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /*background-color: transparent;*/
+  container-type: inline-size;
+  padding: 8px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ffffff26, #ffffff33);
+  backdrop-filter: blur(1px);
+  box-shadow: #888 2px 2px 12px;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #f2f2f2;
+  border-right: 1px solid #5b5a5a;
+  border-bottom: 1px solid #3d3d3d;
 }
 
 .cell{
-  height: 55px;
-  width: 55px;
-  display: inline-block;
-  margin: 2px 0px 0px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  font-family: Futura, Lato, sans-serif;
-  font-size: 28px;
+  font-family: monospace, ui-monospace;
+  font-size: clamp(15px, 4.9cqw, 28px);
   text-align: center;
-  vertical-align: middle;
-  line-height: 55px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.3);
   color: rgb(40,40,40);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  /* glass effect */
+  background-image: linear-gradient(45deg, #ffffff26, #ffffff33);
+  border: 1px solid #a1a1a1;
+  border-left: 1px solid #fff;
+  border-top: 1px solid #efefef;
+}
+
+.cell.clicked,
+.cell.green{
+  background-image: none;
+}
+
+.cell.clicked{
+  background-color: rgba(255,255,255,0.7);
 }
 
   .wrapper{
@@ -63,7 +110,7 @@ body{
   letter-spacing: 3px;
   margin-top: 15px;
   cursor: pointer;
- text-align: center;
+  text-align: center;
 }
 
 
@@ -87,9 +134,11 @@ li{
   text-align: left;
 }
 
-.container{
-  width: 570px;
-  margin: 0 auto;
+.divider{
+  margin: 20px 0px 20px 0px;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
 }
 
 .button{
@@ -102,16 +151,41 @@ li{
   color: #0072FF;
   float: right;
   border-radius: 15px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.button:hover{
-  color: #EBE8EC;
-  border: 2px solid #EBE8EC;
+/* Gradient fill for the action buttons (whole-background fade) */
+#newgame, #howto, #endnewgame{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(45deg, #ffffff26, #ffffff33);
+  backdrop-filter: blur(1px);
+  box-shadow: #888 2px 2px 12px;
+}
+#newgame::before, #howto::before, #endnewgame::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #0072FF, #228DFF);
+  opacity: 0;
+  transition: opacity .45s ease;
+  z-index: -1;
 }
 
-#endnewgame:hover{
-  color: #EBE8EC;
-  border: 2px solid #EBE8EC;
+@media (hover: hover) {
+  #newgame:hover::before, #howto:hover::before, #endnewgame:hover::before{
+    opacity: 1;
+  }
+  .button:hover{
+    color: #EBE8EC;
+    border-color: #0072FF;
+  }
+  #endnewgame:hover{
+    color: #EBE8EC;
+    border-color: #0072FF;
+  }
 }
 
 #howto{
@@ -133,6 +207,10 @@ li{
   padding-bottom: 20px;
   margin-bottom: 10px;
   float: left;
+  transition: color .45s ease;
+  background: linear-gradient(45deg, #ffffff26, #ffffff33);
+  backdrop-filter: blur(1px);
+  box-shadow: #888 2px 2px 12px;
 }
 
 .share{
@@ -150,24 +228,47 @@ li{
 }
 
 #endgame{
-  width: 570px;
-  height: 570px;
-  border: 2px solid #0072ff;
   position: absolute;
-  margin-top: -570px;
+  inset: 0;
+  border: 2px solid #0072ff;
   display: none;
   text-align: center;
   border-radius: 15px;
+  box-sizing: border-box;
+  padding: 16px;
+  background: linear-gradient(45deg, #ffffff26, #ffffff33);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.endgame-inner{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
 }
 
 .endtext{
-  font-size: 85px;
+  margin: 0;
+  font-size: clamp(40px, 15cqw, 85px);
+  font-family: Futura, Lato, sans-serif;
+  color: #0072ff;
+  text-align: center;
+}
+
+.endscore{
+  margin: 0;
+  font-size: clamp(15px, 7cqw, 40px);
   font-family: Futura, Lato, sans-serif;
   color: #0072ff;
   text-align: center;
 }
 
 #endnewgame{
+  margin: 0;
   font-family: Futura, Lato, sans-serif;
   font-size: 14pt;
   display: inline-block;
@@ -176,11 +277,22 @@ li{
   padding: 10px 20px 10px 20px;
   color: #0072FF;
   border-radius: 15px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.gif-wrap{
+  display: none;
 }
 
 #gif{
   margin-left: 100px;
   display: none;
+}
+
+#gif img{
+  max-width: 100%;
+  height: auto;
 }
 
 #slogan{
@@ -196,93 +308,62 @@ li{
   cursor: pointer;
 }
 
-@media only screen and (max-width : 680px) {
-
-.container{
-  width: 410px;
-  padding-top: 50px;
-}
-
-.grid{
-  margin-top: 110px;
-  background-color: transparent;
-  height: 400px;
-  width: 400px;
-  clear: both;
-}
-
-.cell{
-  height: 38px;
-  width: 38px;
+#paypal{
   display: inline-block;
-  margin: 2px 0px 0px 2px;
-  border-radius: 2px;
-  font-family: Futura, Lato, sans-serif;
-  font-size: 22px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 38px;
-  background-color: rgba(255, 255, 255, 0.7);
-  color: rgb(40,40,40);
 }
+
+/* ----- Small screens ----- */
+@media only screen and (max-width : 480px) {
+  .container{
+    padding-top: 20px;
+  }
+
+  .button{
+    padding: 8px 12px;
+    font-size: 11pt;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #newgame, #howto{
+    margin-top: 0;
+    margin-right: 0;
+    letter-spacing: 0px;
+  }
 
   #howto{
-  margin-right: 5px;
+    margin-right: 5px;
+  }
+
+  #logo{
+    font-size: 44px;
+    margin: 0;
+    padding: 12px 16px;
+  }
+
+  #slogan{
+    padding: 8px 0px 4px 0px;
     letter-spacing: 0px;
+  }
+
+  .board{
+    margin-top: 24px;
+  }
+
+  #gif{
+    margin-left: 0;
+  }
 }
 
-#logo{
-  margin-top: -150px;
-  margin-left: 5px;
-  letter-spacing: 0px;
-}
-
-#newgame{
-  margin-right: 5px;
-}
-  
-#gif{
-  margin-left: 5px;
-}
-
-#slogan{
-  letter-spacing: 0px;
-  padding-right: 5px;
-}
-
-#endgame{
-  width: 410px;
-  height: 410px;
-  border: 1px solid #0072ff;
-  position: absolute;
-  margin-top: -410px;
-  display: none;
-  text-align: center;
-}
-
-.endtext{
-  font-size: 60px;
-  font-family: Futura, Lato, sans-serif;
-  color: #0072ff;
-  text-align: center;
-}
-
-.endscore{
-  font-size: 15px;
-  font-family: Futura, Lato, sans-serif;
-  color: #0072ff;
-  text-align: center;
-  margin-top: -10px;
-}
-/* Media end */}
-#paypal{
-display: inline-block;
-}
-
-.endscore{
-  font-size: 40px;
-  font-family: Futura, Lato, sans-serif;
-  color: #0072ff;
-  text-align: center;
-  margin-top: -40px;
+/* Reduced motion: disable the green pulse + gradient wipe/flow (instant static fill) */
+@media (prefers-reduced-motion: reduce) {
+  .green{
+    -webkit-animation: none;
+    animation: none;
+  }
+  #newgame::before, #howto::before, #endnewgame::before{
+    transition: none;
+  }
 }
